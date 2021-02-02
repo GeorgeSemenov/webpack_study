@@ -1,0 +1,5 @@
+mixin sending-form__bottom(modifier)
+  .sending-form__bottom&attributes(attributes)
+    if modifier.contacts != undefined
+      +sending-form__contacts(modifier)
+    +link({text: modifier.buttonText})(class="sending-form__submit-button link_theme_button")

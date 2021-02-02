@@ -1,0 +1,4 @@
+include ../map/map.pug
+mixin map-screen(modifier)
+  .map-screen&attributes(attributes)
+    +map(modifier)(class="map-screen__map")

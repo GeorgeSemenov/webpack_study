@@ -1,0 +1,8 @@
+include ../annotation/annotation.pug
+mixin footer(modifier)
+  .footer&attributes(attributes)
+    if modifier == undefined
+      - modifier = someValue;
+    if modifier.annotation == undefined
+      - modifier.annotation = {text: "© Copyright",text_highlighted: " Mindblister",tex: " 2019",};
+    +annotation(modifier)(class="footer__annotation")

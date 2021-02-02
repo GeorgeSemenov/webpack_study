@@ -1,0 +1,7 @@
+mixin menu__list-item-name-and-price-container(modifier)
+  table.menu__list-item-name-and-price-container&attributes(attributes)
+    tbody
+      tr
+        +menu__list-item-dish-name(modifier)
+        +menu__list-item-dots(modifier)
+        +menu__list-item-price(modifier)

@@ -1,0 +1,29 @@
+mixin content-screen__image(modifier)
+  picture.content-screen__image&attributes(attributes)
+    case modifier._imgName
+      when "fire&coals"
+        source(type="image/webp" srcset=require("../../img/fire&coals-400.png") media="(max-width: 600px)")
+        source(type="image/webp" srcset=require("../../img/fire&coals-200.png") media="(max-width: 320px)")
+        img(src=require("../../img/fire&coals.png") alt="fire and coal").content-screen__img&attributes(attributes)
+
+      when "clocks"
+        source(type="image/webp" srcset=require("../../img/clocks.png") media="(max-width: 500px)")
+        img(src=require("../../img/clocks.png") alt="clocks").content-screen__img&attributes(attributes)
+
+      when "masterChief"
+        source(type="image/webp" srcset=require("../../img/chief-mobile.png") media="(max-width: 500px)")
+        img(src=require("../../img/chief.png") alt="master chief").content-screen__img&attributes(attributes)
+
+      when "chocolate"
+        source(type="image/webp" srcset=require("../../img/chocolate-mobile.png") media="(max-width: 500px)")
+        img(src=require("../../img/chocolate.png") alt="chocolate").content-screen__img&attributes(attributes)
+
+      when "wedding"
+        source(type="image/webp" srcset=require("../../img/wedding.png") media="(max-width: 500px)")
+        img(src=require("../../img/wedding.png") alt="wedding").content-screen__img&attributes(attributes)
+
+      when "rings"
+        source(type="image/webp" srcset=require("../../img/rings.png") media="(max-width: 500px)")
+        img(src=require("../../img/rings.png") alt="lord of the rings").content-screen__img&attributes(attributes)
+      default
+        p "where is no image with such name"

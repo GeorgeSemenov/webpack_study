@@ -1,0 +1,5 @@
+mixin navigation__menu(modifier)
+  - var i = 0;
+  ul.navigation__menu&attributes(attributes)
+    each item in modifier.items
+      +navigation__item(item)

@@ -1,0 +1,35 @@
+@import '_transparent/link_transparent';
+@import '__text/link__text';
+.link {
+  @include unselectable;
+  @include py(22px);
+  text-align: center;
+  cursor: pointer;
+  background-color: $link--BGColor;
+  min-width: 200px;
+  border-radius: 5px;
+  color: $link--color;
+  text-decoration: none;
+
+  @media (max-width: $md - 1px) {
+    @include py(15px);
+    @include px(5px);
+    min-width: 100px;
+  }
+
+  &:hover{
+    background-color: darken($link--BGColor,10%);
+  }
+  &:active{
+    background-color: darken($link--BGColor,20%);
+    color: darken($link--color,30%)
+  }
+
+  &.link_transparent{
+    border-width: 1px;
+    border-style: solid;
+    background-color: $link_transparent--BGColor;
+    border-color: $link_transparent--borderColor;
+    @include buttonFullBehave ($link_transparent--BGColor,$link--color);
+  }
+}

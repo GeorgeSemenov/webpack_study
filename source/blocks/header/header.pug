@@ -1,0 +1,7 @@
+include __caption/header__caption.pug
+include __text/header__text.pug
+mixin header(modifier)
+  .header&attributes(attributes)
+    if modifier.caption!=undefined
+      +header__caption(modifier)
+    +header__text(modifier)

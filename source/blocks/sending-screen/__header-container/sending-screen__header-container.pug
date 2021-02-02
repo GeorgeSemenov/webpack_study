@@ -1,0 +1,5 @@
+mixin sending-screen__header-container(modifier)
+  .sending-screen__header-container&attributes(attributes)
+    -var header= {text: modifier.header};
+    +header(header)(class="sending-screen__header")
+    +text-box(modifier.headerDescription)(class="text-box_highlighted")

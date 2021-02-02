@@ -1,0 +1,6 @@
+.navigation__sandwich-ico-container {
+  @include square(35px);
+  position: absolute;
+  left: 10px;
+  display: block;
+}

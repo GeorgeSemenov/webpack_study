@@ -1,0 +1,9 @@
+.menu__list-item-dot {
+  line-height: 1ex;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px dotted $menu__listItemDot--BGColor;
+  @media (max-width: $xl - 1px) {
+    border-width: 2px;
+  }
+}

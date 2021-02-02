@@ -1,0 +1,6 @@
+.sending-form__contact {
+  margin-right: 10px;
+  @media (max-width: $sm - 1px) {
+    margin-right: 0px;
+  }
+}

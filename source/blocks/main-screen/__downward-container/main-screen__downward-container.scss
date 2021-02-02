@@ -1,0 +1,31 @@
+.main-screen__downward-container {
+  @include square(60px)
+  @include centeredX();
+  position: absolute;
+  bottom: 10.3vh;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $main-screen__downward-container--borderColor;
+  border-radius: 100%;
+
+  &:before, &:after{
+    @include centeredX();
+    position: absolute;
+    content: '';
+    width: 1px;
+    background-color: $main-screen__downward-container-before-after--BGColor;
+  }
+
+  &:before{
+    top: $main-screen__downward--height;
+    bottom: -11.5vh;
+  }
+  &:after{
+    bottom:$main-screen__downward--height;
+    top:-57vh;
+  }
+
+  @media (max-height: 515px) {
+      bottom: 5px;
+  }
+}

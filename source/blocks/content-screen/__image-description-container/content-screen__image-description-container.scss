@@ -1,0 +1,23 @@
+.content-screen__image-description-container {
+  background-color: $content-screen__image-description-container--BGColor;
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.content-screen_image-position_both-sides{
+  .content-screen__content-box{
+    @media (max-width: $md - 1px) {
+      margin-bottom: 15px;
+    }
+  }
+  .content-screen__content-box + .content-screen__content-box{
+    .content-screen__image-description-container{
+      top: 0;
+      left:-1px;
+    }
+  }
+}

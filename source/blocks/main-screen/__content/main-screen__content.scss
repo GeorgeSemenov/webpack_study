@@ -1,0 +1,21 @@
+.main-screen__content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 98px;
+  position: relative;
+  padding-left: 80px;
+  padding-right: 80px;
+  @media (max-width: $xl - 1px) {
+    padding-top:  50px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (max-width: $md - 1px){
+    padding: 0;
+    position: static;
+    justify-content: auto;
+    flex-direction: column;
+  }
+}

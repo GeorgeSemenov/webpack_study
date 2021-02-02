@@ -1,0 +1,12 @@
+include __text/link__text.pug
+mixin link(modifier)
+  if modifier == undefined
+      - modifier = {};
+  if modifier.text == undefined
+    - modifier.text = "some button text";
+  if (attributes.class.indexOf("_theme_button")> -1)
+    button.link()&attributes(attributes)
+      +link__text(modifier)
+  else
+    a.link(href="#!")&attributes(attributes)
+      +link__text(modifier)

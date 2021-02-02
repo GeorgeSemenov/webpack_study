@@ -1,0 +1,27 @@
+@import '_color_white/header_color_white';
+@import '_big/header_big';
+@import '__caption/header__caption';
+@import '__text/header__text';
+.header {
+  text-align: center;
+
+  &:after{
+    content:"";
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    background-color: $header-after--BGColor;
+    border-radius: 10px;
+    position: relative;
+    top: 0px;
+    margin-top: 15px
+  }
+
+  &.header_color_white{
+    color: $header__text_color_white--color;
+  }
+}
+
+.header_big.header:after {
+  margin-top: 0px;
+}

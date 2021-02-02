@@ -1,0 +1,13 @@
+//-Решил убрать отсюда pug составляющую, т.к. данныый модуль лучше 
+//-управляется из модуля content-screen__image.pug
+  mixin content-screen__img(modifier)
+    -const oopsieDoopsie = "../../img/fire&coals.png";
+    case modifier.imgName
+      when "fire&coals"
+        p you have no friends
+      when 1
+        p you have a friend
+      default
+        p you have #{friends} friends
+
+    img(src=require("../../img/fire&coals.png") alt="fire and coal").content-screen__img&attributes(attributes)

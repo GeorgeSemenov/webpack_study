@@ -1,0 +1,15 @@
+.sending-form__contacts {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: start;
+  min-height: 50px;
+  align-items: center;
+  order: 1;
+
+  @media (max-width: $lg - 1px) {
+    flex-basis: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    order: 2;
+  }
+}

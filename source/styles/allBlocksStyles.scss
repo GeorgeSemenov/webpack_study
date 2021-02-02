@@ -1,0 +1,42 @@
+/* Компоненты */
+@import '../vendor/UnCss';/* т.к. он сбрасывает все стили */
+@import '../vendor/slickCarousel/slick/slick';
+@import '../vendor/swiperJS/swiper-bundle';
+
+/* Шрифты */
+
+/* идут перед миксинами, т.к. шрифты могут быть использованны в миксинах */
+@import '../fonts/allFonts';
+
+/* самодельные стили */
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+@import 'global';
+
+
+/* Файлы блоков */
+
+//Место для главной страницы
+
+/* Стили блоков */
+@import '../blocks/header/header';
+@import '../blocks/link/link';
+@import '../blocks/social/social';
+@import '../blocks/navigation/navigation';
+@import '../blocks/downward/downward';
+@import '../blocks/main-screen/main-screen';
+@import '../blocks/content-screen/content-screen';
+@import '../blocks/text-box/text-box';
+@import '../blocks/preloader/preloader';
+@import '../blocks/sending-form/sending-form';
+@import '../blocks/annotation/annotation';
+@import '../blocks/carousel/carousel';
+@import '../blocks/menu-screen/menu-screen';
+@import '../blocks/menu/menu';
+@import '../blocks/picture-line/picture-line';
+@import '../blocks/sending-screen/sending-screen';
+@import '../blocks/contact/contact';
+@import '../blocks/map-screen/map-screen';
+@import '../blocks/map/map';
+@import '../blocks/footer/footer';

@@ -1,0 +1,12 @@
+include __arrow/picture-line__arrow.pug
+include __carousel/picture-line__carousel.pug
+include __content/picture-line__content.pug
+include __img-box/picture-line__img-box.pug
+mixin picture-line(modifier)
+  .picture-line&attributes(attributes).swiper-container
+    if modifier.length == 0
+      - modifier = ['mazzo','briches','tables','chair']
+
+    +picture-line__carousel(modifier)
+    +picture-line__arrow(class="picture-line__arrow_right swiper-button-next")
+    +picture-line__arrow(class="picture-line__arrow_left swiper-button-prev")

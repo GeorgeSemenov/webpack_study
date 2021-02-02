@@ -1,0 +1,9 @@
+.main-screen__link {
+  &+&{
+    margin-left: 40px;
+  }
+
+  @media (max-width: $md - 1px) {
+    margin-left: 15px;
+  }
+}

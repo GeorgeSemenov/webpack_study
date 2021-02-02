@@ -1,0 +1,29 @@
+@import '__ico/social__ico';
+@import '_twitter/social_twitter';
+@import '_instagram/social_instagram';
+@import '_facebook/social_facebook';
+.social {
+  @include square(60px);
+  cursor: pointer;
+  border-radius: 100%;
+  border-style: solid;
+  border-color: $social--borderColor;
+  border-width: 1px;
+  position: relative;
+
+  @media (max-width: $md - 1px) {
+    @include square(45px);
+  }
+  &:hover{
+    border-color: $social-hover--borderColor;
+  }
+
+  &:active{
+    border-color: darken($social-hover--borderColor,20%);
+  }
+
+  &:before{
+    @include centered;
+    position: absolute;
+  }
+}

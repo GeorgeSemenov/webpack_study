@@ -1,0 +1,128 @@
+$image-width-desktop: 475px;
+$image-width-tablet: 300px;
+$image-width-mobile: 190px;
+@import '__image-wrapper/content-screen__image-wrapper';
+@import '__image-and-descritption/content-screen__image-and-descritption';
+@import '__annotation/content-screen__annotation';
+@import '__image-description-container/content-screen__image-description-container';
+@import '__image-description-text/content-screen__image-description-text';
+@import '_theme_private-events/content-screen_theme_private-events';
+@import '_theme_specialties/content-screen_theme_specialties';
+@import '_theme_booking/content-screen_theme_booking';
+@import '_with-clock/content-screen_with-clock';
+@import '_with-sending-form/content-screen_with-sending-form';
+@import '__sending-form/content-screen__sending-form';
+@import '_with-lines/content-screen_with-lines';
+@import '_theme_dark/content-screen_theme_dark';
+@import '_theme_our-team/content-screen_theme_our-team';
+@import '__banner/content-screen__banner';
+@import '__img/content-screen__img';
+@import '__content/content-screen__content';
+@import '__text-box/content-screen__text-box';
+@import '_image-position_both-sides/content-screen_image-position_both-sides';
+@import '_image-position_left/content-screen_image-position_left';
+@import '_image-position_right/content-screen_image-position_right';
+@import '__image/content-screen__image';
+@import '__header/content-screen__header';
+@import '__content-box/content-screen__content-box';
+.content-screen {
+  display: flex;
+  height: 675px;
+  position: relative;
+  flex-wrap: wrap;
+  background-size: cover;
+
+  &.content-screen_with-lines:after, &.content-screen_with-lines:before{
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: $content-screen_with-lines-before-after--BGColor;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+  }
+  &.content-screen_with-lines:after{
+    right: 20.4%;
+  }
+  &.content-screen_with-lines:before{
+    left: 20.4%;
+  }
+
+  @media (max-width: $xl - 1px) {
+    padding-bottom: 0;
+    @include px(15px);
+  }
+  @media (max-width: $md - 1px){
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  &.content-screen_theme_our-team{
+    height: auto;
+    padding-top: 45px;
+    background-image: linear-gradient($content-screen_theme_our-team--BGImageGradient), url("../../img/vegetables.png");
+    padding-bottom: 100px;
+    @media (max-width: $lg - 1px) {
+      padding-top: 30px;
+      background-image: linear-gradient($content-screen_theme_our-team--BGImageGradient), url("../../img/vegetables-md.png");
+      padding-bottom: 70px;
+    }
+    @media (max-width: $sm - 1px) {
+      padding-top: 15px;
+      background-image: linear-gradient($content-screen_theme_our-team--BGImageGradient), url("../../img/vegetables-mobile.png");
+      padding-bottom: 30px;
+    }
+  }
+  &.content-screen_theme_booking{
+    justify-content: center;
+    box-sizing: border-box;
+    align-content: space-between;
+    padding-top: 85px;
+    padding-bottom: 43px;
+
+    @media (max-width: $md - 1px){
+      padding-top: 25px;
+      padding-bottom: 20px;
+    }
+  }
+  &.content-screen_theme_specialties{
+    background-size: cover;
+    background-image: linear-gradient($content-screen_theme_specialties--BGImageGradient), url("../../img/stew.png");
+    box-sizing: border-box;
+    padding-top: 44px;
+    padding-bottom: 87px;
+    padding-left: 21px;
+
+    @media (max-width: $lg - 1px) {
+      background-image: linear-gradient($content-screen_theme_specialties--BGImageGradient), url("../../img/stew-md.png");
+    }
+
+    @media (max-width: $xl - 1px){
+      padding-left: 0;
+    }
+    @media (max-width: $sm - 1px) {
+      background-image: linear-gradient($content-screen_theme_specialties--BGImageGradient), url("../../img/stew-mobile.png");
+    }
+  }
+  &.content-screen_theme_private-events{
+    box-sizing: border-box;
+    padding-top: 44px;
+    padding-bottom: 0px;
+    justify-content: center;
+    background-size: cover;
+    background-image: linear-gradient($content-screen_theme_private-events--BGImageGradient), url("../../img/stew.png");
+
+    @media (max-width: $lg - 1px) {
+      background-image: linear-gradient($content-screen_theme_specialties--BGImageGradient), url("../../img/stew-md.png");
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    @media (max-width: $sm - 1px) {
+      background-image: linear-gradient($content-screen_theme_specialties--BGImageGradient), url("../../img/stew-mobile.png");
+    }
+  }
+}

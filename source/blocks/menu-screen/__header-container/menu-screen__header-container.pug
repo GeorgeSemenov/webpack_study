@@ -1,0 +1,5 @@
+mixin menu-screen__header-container(modifier)
+  .menu-screen__header-container&attributes(attributes)
+    - var headerObj = {text: modifier.header}
+    +header(headerObj)(class="menu-screen__header")
+    +text-box(modifier.subHeader)(class="text-box_highlighted")

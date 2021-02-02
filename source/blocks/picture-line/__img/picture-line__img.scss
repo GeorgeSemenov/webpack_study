@@ -1,0 +1,5 @@
+.picture-line__img {
+  @media (max-width: $sm - 1px){
+    min-width: 80%;
+  }
+}

@@ -1,0 +1,7 @@
+.menu-screen__header-container {
+  width: 560px;
+  margin-bottom: 6.2vh;
+  @media (max-width: $lg - 1px) {
+    width: auto;
+  }
+}

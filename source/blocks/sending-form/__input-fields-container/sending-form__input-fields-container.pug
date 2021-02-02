@@ -1,0 +1,6 @@
+mixin sending-form__input-fields-container(modifier)
+  .sending-form__input-fields-container&attributes(attributes)
+    if modifier.inputFields == undefined
+      - modifier.inputFields = [{placeholder:"Name", class:""},{placeholder:"Email", class:""},{placeholder:"Phone", class:""},{placeholder:"People", class:"sending-form__input-field_selection",options:['people',"1 human", "2 men", "3 people"]},{placeholder:"Date(mm/dd)", class:"sending-form__input-field_date"},{placeholder:"Time", class:"sending-form__input-field_selection", options: ["Time", "Future", "Present", "Past"]}]
+    each objVal in modifier.inputFields
+      +sending-form__input-field(objVal.options)(class=objVal.class placeholder=objVal.placeholder)

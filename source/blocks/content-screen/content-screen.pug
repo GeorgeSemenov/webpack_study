@@ -1,0 +1,54 @@
+include __image-wrapper/content-screen__image-wrapper.pug
+include __image-and-descritption/content-screen__image-and-descritption.pug
+include __image-description-container/content-screen__image-description-container.pug
+include __image-description-text/content-screen__image-description-text.pug
+include __banner/content-screen__banner.pug
+include __img/content-screen__img.pug
+include __content/content-screen__content.pug
+include __image/content-screen__image.pug
+include __content-box/content-screen__content-box.pug
+include ../text-box/text-box.pug
+include ../header/header.pug
+include ../sending-form/sending-form.pug
+include ../annotation/annotation.pug
+mixin content-screen(modifier)
+  .content-screen&attributes(attributes)
+    - var imgName = modifier.imgName;
+    - var imgName2 = modifier.imgName;
+    - var imgDesc = modifier.imgDesc;
+    - var imgDesc2 = modifier.imgDesc;
+    if (attributes.class.indexOf('_image-position_both-sides') > -1)
+      - var isFirstContentBoxHaveImage = true;
+      - var isSecondContentBoxHaveImage = true;
+      - imgName2 = modifier.imgName2;
+      - imgDesc2 = modifier.imgDesc2;
+    else if (attributes.class.indexOf('_image-position_left') > -1)
+      - var isFirstContentBoxHaveImage = true;
+      - var isSecondContentBoxHaveImage = false;
+      if (attributes.class.indexOf('_with-sending-form') > -1)
+        - var isSecondContentBoxHaveSendingForm = true;
+        - var isFirstContentBoxHaveSendingForm = false;
+    else if (attributes.class.indexOf('_image-position_right') > -1)
+      - var isFirstContentBoxHaveImage = false;
+      - var isSecondContentBoxHaveImage = true;
+      if (attributes.class.indexOf('_with-sending-form') > -1)
+        - var isFirstContentBoxHaveSendingForm = true;
+        - var isSecondContentBoxHaveSendingForm = false;
+
+    if modifier.banner != undefined
+      +content-screen__banner(modifier)
+
+    +content-screen__content-box(Object.assign(modifier, {
+      _haveImage: isFirstContentBoxHaveImage,
+      _haveSendingForm: isFirstContentBoxHaveSendingForm,
+      _imgName: imgName,
+      _imgDesc: imgDesc
+    }))
+    +content-screen__content-box(Object.assign(modifier, {
+      _haveImage: isSecondContentBoxHaveImage,
+      _haveSendingForm: isSecondContentBoxHaveSendingForm,
+      _imgName: imgName2,
+      _imgDesc: imgDesc2
+    }))
+    if modifier.annotation != undefined
+      +annotation(modifier)(class="content-screen__annotation")

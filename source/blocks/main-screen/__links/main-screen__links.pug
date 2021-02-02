@@ -1,0 +1,4 @@
+mixin main-screen__links(modifier)
+  .main-screen__links&attributes(attributes)
+    +link({text: modifier.link1Text})(class="main-screen__link")
+    +link({text: modifier.link2Text})(class="main-screen__link link_transparent")

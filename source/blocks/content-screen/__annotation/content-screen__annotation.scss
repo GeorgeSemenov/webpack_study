@@ -1,0 +1,13 @@
+.content-screen__annotation {
+  @media (max-width: $lg - 1px){
+    text-align: center;
+  }
+}
+.content-screen_theme_dark{
+  @media (max-width: $md - 1px) {
+    text-align: center;
+  }
+  .content-screen__annotation {
+    color: $content-screen__annotation--color;
+  }
+}

@@ -1,0 +1,18 @@
+include __content/sending-screen__content.pug
+include ../text-box/text-box.pug
+include ../header/header.pug
+include ../sending-form/sending-form.pug
+include __header-container/sending-screen__header-container.pug
+mixin sending-screen(modifier)
+  .sending-screen&attributes(attributes)
+    +sending-screen__content(modifier)
+
+    //- Этот блок принимает следующие переменные:
+      header = str
+      headerDescription = str
+
+      //- в sending-form уходят следующие данные
+
+        //- modifier.inputFields=[{placeholder:str, class:str. opt-options:[str,str...]}, ...]
+        //- modifier.textAreaPlaceholder = str
+        //- modifier.buttonText = str

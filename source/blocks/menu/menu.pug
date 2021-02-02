@@ -1,0 +1,16 @@
+include __list-item-price/menu__list-item-price.pug
+include __list-item-dot/menu__list-item-dot.pug
+include __list-item-dots/menu__list-item-dots.pug
+include __list-item-dish-name/menu__list-item-dish-name.pug
+include __list-item-decription/menu__list-item-decription.pug
+include __list-item-name-and-price-container/menu__list-item-name-and-price-container.pug
+include __lists-container/menu__lists-container.pug
+include __list-item/menu__list-item.pug
+include __list/menu__list.pug
+include __tab-text/menu__tab-text.pug
+include __tab-container/menu__tab-container.pug
+include __navigation/menu__navigation.pug
+mixin menu(modifier)
+  .menu.swiper-container&attributes(attributes)
+    +menu__navigation(modifier)
+    +menu__lists-container(modifier)

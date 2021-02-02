@@ -1,0 +1,5 @@
+.picture-line_invisible_small-width {
+  @media (max-width: $lg - 1px){
+    display: none;
+  }
+}

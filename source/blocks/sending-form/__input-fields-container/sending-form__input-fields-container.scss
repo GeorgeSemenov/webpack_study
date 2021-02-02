@@ -1,0 +1,22 @@
+.sending-form__input-fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+
+  @media (max-width: $sm - 1px){
+    flex-direction: column;
+  }
+}
+
+.sending-form_theme_big{
+  .sending-form__input-fields-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+
+    @media (max-width: $sm - 1px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

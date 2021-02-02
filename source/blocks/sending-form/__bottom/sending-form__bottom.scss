@@ -1,0 +1,6 @@
+.sending-form__bottom {
+  display: flex;
+  @media (max-width: $lg - 1px) {
+    flex-direction: column;
+  }
+}

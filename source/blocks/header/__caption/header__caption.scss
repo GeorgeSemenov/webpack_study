@@ -1,0 +1,17 @@
+.header__caption {
+  font-family: 'open-sans' ,Georgia , serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  position: relative;
+  left: 7px;
+  display: none;
+}
+
+.header_big{
+  .header__caption{
+    display: inline-block;
+  }
+}

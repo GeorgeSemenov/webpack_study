@@ -1,0 +1,14 @@
+.sending-form__submit-button {
+  width: 100%;
+}
+
+.sending-form__contacts + .sending-form__submit-button{
+  flex-basis: 50%;
+  order: 2;
+
+  @media (max-width: $lg - 1px) {
+    margin-bottom: 10px;
+    flex-basis: 100%;
+    order: 1;
+  }
+}

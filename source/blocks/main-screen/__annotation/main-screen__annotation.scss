@@ -1,0 +1,20 @@
+.main-screen__annotation {
+  position: absolute;
+  transform: rotate(-90deg) translateX(-50%);
+  color: $main-screen__annotation--color;
+  font-family: 'open-sans' ,Georgia , serif;
+  font-size: 12px;
+  left: -32px;
+
+  @media (max-width: $xl - 1px){
+    left: -9%;
+  }
+  @media (max-width: $md - 1px){
+    order: 3;
+    left: 0;
+    transform: none;
+    display: block;
+    margin-bottom: 15px;
+    position: static;
+  }
+}

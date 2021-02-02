@@ -1,0 +1,4 @@
+mixin picture-line__content(modifier)
+  .picture-line__content&attributes(attributes)
+    each pic in modifier
+      +picture-line__img-box(pic)

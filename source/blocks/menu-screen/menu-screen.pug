@@ -1,0 +1,8 @@
+include __header-container/menu-screen__header-container.pug
+include ../menu/menu.pug
+include ../header/header.pug
+include ../text-box/text-box.pug
+mixin menu-screen(modifier)
+  .menu-screen&attributes(attributes)
+    +menu-screen__header-container(modifier)
+    +menu(modifier)(class="menu-screen__menu")

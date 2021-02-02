@@ -1,0 +1,12 @@
+.main-screen__timework {
+  transform: rotate(-90deg);
+  color: $main-screen__timework--color;
+  font-family: 'open-sans' ,Georgia , serif;
+  font-size: 12px;
+
+  @media (max-width: $lg - 1px){
+    transform: none;
+    display: block;
+    margin-bottom: 15px;
+  }
+}

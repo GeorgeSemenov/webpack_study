@@ -1,0 +1,4 @@
+mixin sending-form__contacts(modifier)
+  .sending-form__contacts&attributes(attributes)
+    each contact in modifier.contacts
+      +contact(contact)(class="sending-form__contact")

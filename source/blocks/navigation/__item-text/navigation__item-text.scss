@@ -1,0 +1,10 @@
+.navigation__item-text {
+  cursor: pointer;
+
+  &:hover{
+    color: darken($navigation__item--color,10%);
+  }
+  &:active{
+    opacity:0.75;
+  }
+}

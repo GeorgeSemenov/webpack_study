@@ -1,0 +1,13 @@
+include __text/annotation__text.pug
+mixin annotation(modifier)
+  .annotation&attributes(attributes)
+    if modifier == undefined
+      - modifier = {someValue:"nikchome"}
+    if modifier.annotation == undefined
+      - modifier.annotation = {someText:"text"}
+
+    each value, key in modifier.annotation
+      if (key.indexOf('highlighted') > -1)
+        +annotation__text(value)(class="annotation_highlighted")
+      else
+        +annotation__text(value)

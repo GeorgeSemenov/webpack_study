@@ -1,0 +1,19 @@
+.social__ico {
+  @include centered;
+  position: absolute;
+  fill:$social__ico--fill;
+}
+
+.social{
+  &:hover{
+    .social__ico{
+      fill: $social__ico-hover--fill;
+    }
+  }
+
+  &:active{
+    .social__ico{
+      fill: darken($social__ico-hover--fill,20%);
+    }
+  }
+}

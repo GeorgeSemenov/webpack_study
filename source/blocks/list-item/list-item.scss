@@ -1,0 +1,13 @@
+@import '__price/list-item__price';
+@import '__name-and-price/list-item__name-and-price';
+@import '__description/list-item__description';
+@import '__dot/list-item__dot';
+@import '__dots/list-item__dots';
+@import '__dish-name/list-item__dish-name';
+.list-item {
+  font-family: 'banny' ,times , serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: $list-item--color;
+  font-weight: bold;
+}

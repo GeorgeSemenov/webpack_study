@@ -1,0 +1,19 @@
+include __fake-block/main-screen__fake-block.pug
+include __social/main-screen__social.pug
+include __socials/main-screen__socials.pug
+include __central-container/main-screen__central-container.pug
+include __downward-container/main-screen__downward-container.pug
+include __links/main-screen__links.pug
+include __content/main-screen__content.pug
+include ../header/header.pug
+include ../link/link.pug
+include ../downward/downward.pug
+include ../annotation/annotation.pug
+mixin main-screen(modifier)
+  .main-screen&attributes(attributes)
+    if modifier == undefined
+        - modifier = {};
+    if modifier.annotation == undefined
+      - modifier.annotation = "Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM";
+    +main-screen__content(modifier)
+    +main-screen__downward-container(modifier)

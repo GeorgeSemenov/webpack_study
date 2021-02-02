@@ -1,0 +1,17 @@
+mixin picture-line__img-box(modifier)
+  picture.picture-line__img-box&attributes(attributes).swiper-slide
+    case modifier
+      when "briches"
+        source(type="image/webp" srcset=require("../../img/hall/briches-mob.png") media="(max-width: 720px)")
+        img(src=require("../../img/hall/briches.png")  class="picture-line__img" alt="coals")()&attributes(attributes)
+      when "chair"
+        source(type="image/webp" srcset=require("../../img/hall/chair-mob.png") media="(max-width: 720px)")
+        img(src=require("../../img/hall/chair.png")  class="picture-line__img" alt="coals")()&attributes(attributes)
+      when "mazzo"
+        source(type="image/webp" srcset=require("../../img/hall/mazzo-mob.png") media="(max-width: 720px)")
+        img(src=require("../../img/hall/mazzo.png")  class="picture-line__img" alt="coals")()&attributes(attributes)
+      when "tables"
+        source(type="image/webp" srcset=require("../../img/hall/tables-mob.png") media="(max-width: 720px)")
+        img(src=require("../../img/hall/tables.png")  class="picture-line__img" alt="coals")()&attributes(attributes)
+      default
+        p there is no such image

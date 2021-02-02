@@ -1,0 +1,10 @@
+mixin sending-form__input-field(options)
+  if options == undefined
+    - options = ['options','empty']
+  if (attributes.class.indexOf('selection') > -1)
+    .sending-form__select-wrapper
+      select.sending-form__input-field&attributes(attributes)
+        each opn in options
+          option!=opn
+  else
+    input.sending-form__input-field&attributes(attributes)

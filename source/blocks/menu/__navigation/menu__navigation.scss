@@ -1,0 +1,15 @@
+.menu__navigation {
+  display: flex;
+  justify-content: center;
+  font-family: 'open-sans' ,Georgia , serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 6.3vh;
+  height: auto;
+
+  @media (max-width: $lg - 1px){
+    justify-content: start;
+    padding-left: 20%;
+  }
+}

@@ -1,0 +1,6 @@
+.main-screen__central-container {
+  @media (max-width: $md - 1px) {
+    order: 1;
+    margin-bottom: 15px;
+  }
+}

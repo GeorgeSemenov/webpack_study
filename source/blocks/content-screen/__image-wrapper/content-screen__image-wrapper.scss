@@ -1,0 +1,104 @@
+.content-screen__image-wrapper {
+  @include square($image-width-desktop);
+  position: relative;
+  padding-left: 25px;
+
+  @media (max-width: $xl - 1px) {
+    @include square($image-width-tablet);
+  }
+  @media (max-width: $sm - 1px) {
+    @include square($image-width-mobile);
+  }
+
+  &:after{
+    @include square(210px);
+    top: 50%;
+    position: absolute;
+    border-radius: 5px;
+    border: 20px solid $content-screen__image-after--borderColor;
+    content:"";
+    display: block;
+
+    @media (max-width: $xl - 1px) {
+      @include square(90px);
+      border-width: 14px;
+    }
+    @media (max-width: $sm - 1px) {
+      @include square(70px);
+      border-width: 8px;
+    }
+  }
+}
+
+.content-screen_image-position_right{
+  .content-screen__image-wrapper{
+    &:after {
+      right:0;
+      transform: translate(50%, -50%);
+      @media (max-width: $xl - 1px){
+        transform: translate(40%, -50%);
+      }
+    }
+  }
+}
+.content-screen_image-position_left{
+  .content-screen__image-wrapper{
+    padding-left: 0;
+    padding-right: 50px;
+    align-self: flex-end;
+    &:after {
+      left:0;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: $xl - 1px) {
+      padding-right: 0;
+      align-self: auto;
+    }
+  }
+}
+.content-screen_image-position_both-sides{
+  .content-screen__content-box {
+    .content-screen__image-wrapper{
+      &:after {
+        left:0;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .content-screen__content-box + .content-screen__content-box {
+    .content-screen__image-wrapper{
+      &:after {
+        left: auto;
+        right:0;
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+}
+
+.content-screen_theme_booking{
+  .content-screen__image-wrapper{
+    padding-left: 5%;
+
+    @media (max-width: $xl - 1px){
+      padding-left: 0;
+    }
+  }
+}
+
+.content-screen_theme_our-team{
+  .content-screen__image-wrapper:after{
+    left: 15px;
+    @media (max-width: $md - 1px){
+      left: 0;
+    }
+  }
+}
+
+.content-screen_theme_private-events {
+  .content-screen__image-wrapper{
+    padding-left: 0px;
+  }
+}
+

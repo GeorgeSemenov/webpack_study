@@ -1,0 +1,20 @@
+.menu__list {
+  display: none;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(3, 360px);
+  justify-content: space-between;
+
+  &.menu__list_active{
+    display: grid;
+  }
+  @media (max-width: $xl - 1px) {
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 360px);
+  }
+  @media (max-width: $md - 1px) {
+    grid-template-columns: repeat(1, 320px);
+  }
+  @media (max-width: $sm - 1px){
+    grid-template-columns: repeat(1, 300px);
+  }
+}

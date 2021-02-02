@@ -1,0 +1,30 @@
+.navigation__logo {
+  @include transition();
+  @include square(150px);
+  @include centeredX();
+  top: 0;
+  cursor: pointer;
+  position: absolute;
+
+
+  @media (max-height: 500px) {
+    @include square (50px);
+  }
+
+  @media (max-width: $md - 1px){
+    @include square(50px);
+    top: 0;
+  }
+
+  /*@media (max-height: 400px) {
+    display: none;
+  }*/
+}
+
+.navigation_desktop-theme_small-logo {
+  .navigation__logo{
+    @include square(75px);
+    @include transition();
+    top: -15px;
+  }
+}

@@ -1,0 +1,10 @@
+@import '__annotation/footer__annotation';
+.footer {
+  height: 100px;
+  background-color: $footer--BGColor;
+  position: relative;
+
+  @media (max-width: $md - 1px){
+    height: 50px;
+  }
+}

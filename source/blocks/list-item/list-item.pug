@@ -1,0 +1,9 @@
+include __price/list-item__price.pug
+include __name-and-price/list-item__name-and-price.pug
+include __description/list-item__description.pug
+include __dots/list-item__dots.pug
+include __dish-name/list-item__dish-name.pug
+mixin list-item(modifier)
+  .list-item&attributes(attributes)
+    +list-item__name-and-price(modifier)
+    +list-item__description(modifier)

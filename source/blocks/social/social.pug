@@ -1,0 +1,11 @@
+include ../../img/svg/facebookSVG.pug
+include ../../img/svg/twitterSVG.pug
+include ../../img/svg/instagramSVG.pug
+mixin social(modifier)
+  .social&attributes(attributes)
+    if (attributes.class.includes("social_facebook"))
+      +facebookSVG(modifier)(class="social__ico")
+    if (attributes.class.includes("social_twitter"))
+      +twitterSVG(modifier)(class="social__ico")
+    if (attributes.class.includes("social_instagram"))
+      +instagramSVG(modifier)(class="social__ico")

@@ -1,0 +1,17 @@
+.content-screen__header {
+  position: relative;
+  margin-bottom: 3%;
+
+  @media (max-width: $xl - 1px){
+    padding-left: 0;
+  }
+}
+
+.content-screen_image-position_left{
+  .content-screen__header{
+    padding-left: 5px;
+    @media (max-width: $xl - 1px) {
+      padding-left: 0px;
+    }
+  }
+}

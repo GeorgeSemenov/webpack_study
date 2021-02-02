@@ -1,0 +1,26 @@
+.navigation__item {
+  font-family: 'open-sans' ,Georgia , serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: $navigation__item--color;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 43px;
+  width: 10%;
+
+  &:nth-child(8n+4){
+    margin-right: 20%;
+  }
+
+  @media (max-width: $md - 1px) {
+    @include py(15px)
+    font-size: 2rem;
+    width: auto;
+
+    &:nth-child(8n+4){
+      margin-right: 0;
+    }
+  }
+
+}

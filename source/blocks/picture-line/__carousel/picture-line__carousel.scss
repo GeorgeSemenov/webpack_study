@@ -1,0 +1,6 @@
+.picture-line__carousel {
+  justify-content: center;
+  @media (max-width: $xxl - 1px){
+    justify-content: flex-start;
+  }
+}

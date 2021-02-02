@@ -1,0 +1,10 @@
+mixin main-screen__central-container(modifier)
+  .main-screen__central-container&attributes(attributes)
+    +header({
+        caption:"restaurant",
+        text: "hungry people"
+      })(class="main-screen__header header_big header_color_white header_big header_with-lines")
+    +main-screen__links({
+        link1Text: "book table",
+        link2Text: "explore"
+      })

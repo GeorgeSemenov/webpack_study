@@ -1,0 +1,8 @@
+.annotation__text {
+  font-family: 'open-sans' ,Georgia , serif;
+  font-size: 1.2rem;
+
+  &.annotation_highlighted{
+    font-weight: bold;
+  }
+}

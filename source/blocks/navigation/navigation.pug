@@ -1,0 +1,18 @@
+include __social/navigation__social.pug
+include __sandwich-ico-container/navigation__sandwich-ico-container.pug
+include __sandwich-input/navigation__sandwich-input.pug
+include __sandwich-ico/navigation__sandwich-ico.pug
+include __content/navigation__content.pug
+include __menu/navigation__menu.pug
+include __item-text/navigation__item-text.pug
+include __item/navigation__item.pug
+include __logo/navigation__logo.pug
+include ../social/social.pug
+mixin navigation(modifier)
+  .navigation&attributes(attributes)
+    if modifier.items == undefined
+        - modifier.items = ['someValue','another','value'];
+    +navigation__sandwich-input(modifier)
+    //-ico-container - это бутерброд
+    +navigation__sandwich-ico-container(modifier)
+    +navigation__content(modifier)()

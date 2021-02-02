@@ -1,0 +1,10 @@
+.main-screen__fake-block {
+  width: 50px ;
+
+  @media (max-width: $xl - 1px) { width: auto;}
+
+  @media (max-width: $md - 1px) {
+    display: none;
+    order: 4;
+  }
+}

@@ -1,0 +1,10 @@
+.sending-screen__header-container {
+  width: 550px;
+  @include mx(auto);
+  margin-bottom: 48px;
+  @media (max-width: $md - 1px) {
+    margin-bottom: 25px;
+    width: 100%;
+    @include mx(0);
+  }
+}

@@ -1,0 +1,57 @@
+$margin-bottom: 10px;
+.sending-form__input-field {
+  width: 257px;
+  background-color: $sendingForm__inputField--BGColor;
+  border-radius: 5px;
+  font-family: 'open-sans' ,Georgia , serif;
+  font-size: 1.4rem;
+  line-height: 19px;
+  font-weight: normal;
+  color: $sendingForm__inputField--color;
+  border-width: 0;
+  @include py(20px);
+  padding-left: 20px;
+  margin-bottom: $margin-bottom;
+  margin-right: 5px;
+  position: relative;
+
+  &:nth-child(2n){
+    margin-right:0;
+  }
+
+  &:nth-last-child(1),
+  &:nth-last-child(2){
+    margin-bottom: 0;
+  }
+
+  &.sending-form__input-field_selection{
+    width: 100%;
+    -moz-appearance:none; /* убираем стрелочку для Firefox */
+    -webkit-appearance:none; /* убираем стрелочку для Safari and Chrome */
+    appearance:none;/*убираем стрелочку*/
+  }
+  @media (max-width: $xl - 1px){
+    box-sizing: border-box;
+    width: 48%;
+    margin-right: 4%;
+  }
+
+  @media (max-width: $md - 1px){
+    &:nth-last-child(1),
+    &:nth-last-child(2){
+      margin-bottom: $margin-bottom;
+    }
+  }
+
+  @media (max-width: $sm - 1px){
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.sending-form_theme_big{
+  .sending-form__input-field{
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}

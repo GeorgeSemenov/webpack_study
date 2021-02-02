@@ -1,0 +1,11 @@
+.sending-screen__content {
+  width: 89%;
+  padding-top: 101px;
+  padding-bottom: 100px;
+  @media (max-width: $lg - 1px) {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include px(10px);
+  }
+}

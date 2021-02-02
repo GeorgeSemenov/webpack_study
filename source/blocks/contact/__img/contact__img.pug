@@ -1,0 +1,11 @@
+mixin contact__img(modifier)
+  .contact__img&attributes(attributes)
+    case modifier.img
+      when "mail"
+        +envelopeSVG(modifier)
+      when "phone"
+        +phone_tubeSVG(modifier)
+      when "location"
+        +locationSVG(modifier)
+      default
+        p "There is no such img."

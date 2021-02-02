@@ -1,0 +1,39 @@
+@import '__fake-block/main-screen__fake-block';
+@import '__annotation/main-screen__annotation';
+@import '__social/main-screen__social';
+@import '__socials/main-screen__socials';
+@import '__central-container/main-screen__central-container';
+@import '__downward-container/main-screen__downward-container';
+@import '__link/main-screen__link';
+@import '__downward/main-screen__downward';
+@import '__links/main-screen__links';
+@import '__header/main-screen__header';
+@import '__content/main-screen__content';
+.main-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient($main-screen--BGImageGradient), url("../../img/main-screenBG-mobile.png");
+  background-position: 0,0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  $main-screen--vertical-lines-margin: 20.4vw;
+  &:before, &:after{
+    position: absolute;
+    bottom: 0;
+    content: '';
+    height: calc(100vh - 100px);
+    width: 1px;
+    background-color: $main-screen-before-after--BGColor;
+  }
+  &:before{left: $main-screen--vertical-lines-margin;}
+  &:after{right: $main-screen--vertical-lines-margin;}
+
+  @media (min-width: $lg){
+    background-image: linear-gradient($main-screen--BGImageGradient), url("../../img/main-screenBG.png");
+  }
+
+
+}

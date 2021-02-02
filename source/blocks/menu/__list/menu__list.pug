@@ -1,0 +1,15 @@
+mixin menu__list(list)
+  .menu__list&attributes(attributes)
+    if list.length!= undefined
+      each item in list
+        +menu__list-item(item)
+    else
+      - var i= 0
+      while i < 21 
+        - i++
+        +menu__list-item({
+          listItemDishName: "pizza quatro stagioni",
+          listItemPrice: '55,68',
+          listItemDescription: "integer ulimacorper neque eu purus euismod"
+        })
+

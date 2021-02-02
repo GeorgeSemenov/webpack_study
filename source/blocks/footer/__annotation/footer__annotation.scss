@@ -1,0 +1,14 @@
+.footer__annotation {
+  position: absolute;
+  @include centered();
+  opacity: 0.5;
+  color: $footer__annotation--color;
+  @media (max-width: $md - 1px){
+    width: 100%;
+    text-align: center;
+  }
+
+  .annotation_highlighted{
+    color: $footer__annotation_highlighted--color;
+  }
+}

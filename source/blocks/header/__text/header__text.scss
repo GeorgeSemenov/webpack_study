@@ -1,0 +1,18 @@
+.header__text {
+  font-family: 'banny' ,times , serif;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.header_big{
+  .header__text{
+    font-size: 9.6rem;
+    margin-top: 19px;
+    margin-bottom: 12px;
+
+    @media (max-width: $md - 1px) {
+      font-size: 65px;
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.content-screen__image-description-text {
+  font-family: 'banny' ,times , serif;
+  font-size: 2.9rem;
+  line-height: 1.2rem;
+  color: $content-screen__image-description-text--color;
+  transform:rotate(90deg);
+  position: absolute;
+  transform-origin: top left;
+  width: $image-width-desktop;
+  left: 49px;
+  top: 30px;
+  @media (max-width: $xl - 1px){
+    width: $image-width-tablet;
+    top: auto;
+    text-align: center;
+  }
+  @media (max-width: $sm - 1px){
+    width: $image-width-mobile;
+    font-size: 2.4rem;
+  }
+}
+
+.content-screen_image-position_both-sides{
+  .content-screen__content-box + .content-screen__content-box{
+    .content-screen__image-description-text{
+      right: auto;
+      transform: rotate(-90deg);
+      bottom: 7px;
+      top: auto;
+      left: 30px;
+      font-size: 3.2rem;
+
+      @media (max-width: $md - 1px) {
+        right: -40px;
+        //bottom: 85px;
+        font-size: 2.2rem;
+        top: 100%;
+      }
+    }
+  }
+}

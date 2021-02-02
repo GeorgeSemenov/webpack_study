@@ -1,0 +1,12 @@
+mixin menu__lists-container(modifier)
+  .menu__lists-container&attributes(attributes)
+    //- Принциписально сравнять массив списков и массив навигаций
+    //- в случае если массив навигаций будет больше, то
+    //- массив списков будет набит болванками, чтобы скрипт не ломался
+    while modifier.listsArr.length < modifier.navigationArr.length
+      - modifier.listsArr.push({})
+    each list, index in modifier.listsArr
+      if index == 0
+        +menu__list(list)(class="menu__list_active" data-trigger=(index + 1))
+      else
+        +menu__list(list)(data-trigger=(index + 1))

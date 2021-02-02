@@ -1,0 +1,8 @@
+@import '__content/sending-screen__content';
+@import '__text-box/sending-screen__text-box';
+@import '__header/sending-screen__header';
+@import '__header-container/sending-screen__header-container';
+.sending-screen {
+  display: flex;
+  justify-content: center;
+}

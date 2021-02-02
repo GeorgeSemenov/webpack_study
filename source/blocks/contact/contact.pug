@@ -1,0 +1,12 @@
+include ../../img/svg/envelopeSVG.pug
+include ../../img/svg/phone_tubeSVG.pug
+include ../../img/svg/locationSVG.pug
+include __text/contact__text.pug
+include __img/contact__img.pug
+mixin contact(modifier)
+  //- Список аргументов, которых принимает эта миксина
+    contact__text(text)
+    contact__img(img) - ключевое слово для switch и вывода нужного svg
+  .contact&attributes(attributes)
+    +contact__img(modifier)
+    +contact__text(modifier)
