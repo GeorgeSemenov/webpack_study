@@ -75,19 +75,40 @@ module.exports = {
 			'@': path.resolve(__dirname,'source'),//принцип тот же что и указанно в  строке выше
 		}
 	},
+	// optimization:{//название этого объект говорит само за себя.
+	// 	splitChunks: {//Разделить чанки 
+	// 		chunks: 'all'//все чанки - из всех чанков будет извлечён повторяющийся код и будет добавлен в файлы, в имени которых будет добавлено слово vendor
+	// 	}
+	// },
 	plugins: [
-		new HtmlWebpackPlugin(),
-		new CleanWebpackPlugin()
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({// создаём страничку html
+			filename:'index.html',//Задаём имя генерируемому файлу
+			// chunks: ['index', 'common'],//Добавляет на страницу только те файлы, которые начинаются с index (допустим index.js index.css даже несмотря на то что они находятся в отельных папках css/ и js/)
+			template: PATHS.source + '/pages/index/index.pug'//в данный плагин мы передадим шаблон разметки pug но сразу же скомпилированную (pug-loader'oм), проще говоря плагин сверстает страницу изходя из разметки, которую ему предоставит pug плагин (см он подключени ниже) после обработки этого шаблона
+		})
 	],
 	module: {
 		rules: [
+			// {
+			// 	test: /\.scss$/,
+			// 	use: ['style-loader','css-loader','sass-loader']
+			// },
 			{
 				test: /\.css$/,
+	      sideEffects: true,
 				use: ['style-loader','css-loader']
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
 				use: ['file-loader']
+			},
+			{//Тут описываем настройки лоадера
+				test: /\.pug$/,
+				loader:'pug-loader',//настраиваем pug-loader
+				options:{
+					pretty: true//сделать код компилируемого файла "красивого" раставляем отступы , переносы и т.д.
+				}
 			}
 		]
 	}
