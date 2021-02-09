@@ -1,3 +1,6 @@
-const post = new Post(title: "webpack Post Title")
+import Post from './Post'
+import './styles/styles.scss'
+const post = new Post({title: "webpack Post Title"})
 
-console.log('Post ti String:', post.toString())
+console.log('Post to String:', post.toString())
+console.log('sosnole');
