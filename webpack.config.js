@@ -1,6 +1,6 @@
 const path = require ('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // требует наличие mini-css-extract-plugin убирает дублирующиеся importы в scss например в блоке А и в блоке Б есть импорт блока Г, если на страницу подключить блок А и Б то импортируется на страницу только один раз блок Г discards duplicate selectors in the bundled style sheets from mini-css-extract-plugin
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // Внимание, этот плагин работает только с mini-css-extract-plugin  требует наличие mini-css-extract-plugin убирает дублирующиеся importы в scss например в блоке А и в блоке Б есть импорт блока Г, если на страницу подключить блок А и Б то импортируется на страницу только один раз блок Г discards duplicate selectors in the bundled style sheets from mini-css-extract-plugin
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // чтобы вытащить scss и css код в отдельный фойл а не в style-loader
 // const webpack = require('webpack');//Это нужно что бы появилась возможность выделить код webpack из кода js файлов (index.js и blog.js), для этого мы будем использовать метод optimize
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,7 +41,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin(), // Видимо без этого мы не сможем использовать loader, который будем использовать в для обработки scss файлов
-		new OptimizeCssAssetsPlugin(), // if you put it in optimization.minimizer property, webpack-dev-server won't apply it.
+		new OptimizeCssAssetsPlugin(), // Внимание, этот плагин работает только с mini-css-extract-plugin оптимизирует scss код, убирает двойные импорты if you put it in optimization.minimizer property, webpack-dev-server won't apply it.
 		new HtmlWebpackPlugin({// создаём страничку html
 			filename:'index.html',//Задаём имя генерируемому файлу
 			// chunks: ['index', 'common'],//Добавляет на страницу только те файлы, которые начинаются с index (допустим index.js index.css даже несмотря на то что они находятся в отельных папках css/ и js/)
@@ -57,7 +57,8 @@ module.exports = {
 			{
 				test: /\.scss$/,
 	      sideEffects: true,
-				use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+				// use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+				use: ['style-loader','css-loader','sass-loader']
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,

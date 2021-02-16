@@ -1,2 +1,11 @@
 @import './B-style.scss';
 @import './A-style.scss';
+@import './A-style.scss';
+
+.logo{
+  background-image: url('../pic.png');
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
