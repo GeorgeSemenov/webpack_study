@@ -12,7 +12,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const extractCss = require('./webpack/css.extract');//Модуль для извлечения стилей в отдельный(ые) файл(ы) и дальнейшего подключения к проекту
 // const images = require('./webpack/images');//Модуль, который обрабатывает изображения
 // const fonts = require('./webpack/fonts');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');//Данный плюгин позволяет копировать файлы например php файлы, при этом не изменяя пути, потому что это не лоадер, где нужно указывать расжирения обрабатываемх файлов.
 const PATHS = {//Объект с двумя свойствами
 	source: path.join(__dirname, 'source'),
 	build: path.join(__dirname, 'build')
@@ -46,6 +46,14 @@ module.exports = {
 			filename:'index.html',//Задаём имя генерируемому файлу
 			// chunks: ['index', 'common'],//Добавляет на страницу только те файлы, которые начинаются с index (допустим index.js index.css даже несмотря на то что они находятся в отельных папках css/ и js/)
 			template: 'bomjPacket/index.html'//в данный плагин мы передадим шаблон разметки pug но сразу же скомпилированную (pug-loader'oм), проще говоря плагин сверстает страницу изходя из разметки, которую ему предоставит pug плагин (см он подключени ниже) после обработки этого шаблона
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: path.resolve(__dirname,'README.md'),
+					to: path.resolve(__dirname,'dist')
+				}
+			]
 		})
 	],
 	module: {
